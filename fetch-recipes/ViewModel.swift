@@ -12,7 +12,8 @@ class ViewModel: ObservableObject {
     enum Status {
         case notStarted
         case fetching
-        case success(data: Meal)
+        case success(data: [Meal])
+        case recipeSuccess(data: Recipe)
         case failed(error: Error)
     }
     
@@ -26,16 +27,31 @@ class ViewModel: ObservableObject {
         self.controller = controller
     }
     
-    func getData(for idMeal: String) async {
+    func getAllRecipes() async {
         status = .fetching
         
         do {
-            let recipe = try await controller.fetchRecipe(from: idMeal)
-            status = .success(data: recipe)
+            let meals = try await controller.fetchDessertRecipes()
+            status = .success(data: meals)
+            
         }
         catch {
             status = .failed(error: error)
         }
     }
- }
+    
+    
+    func getRecipeById(for meal: Meal) async {
+            status = .fetching
+    
+            do {
+                let recipe = try await controller.fetchRecipe(from: meal)
+                status = .recipeSuccess(data: recipe)
+            }
+            catch {
+                status = .failed(error: error)
+            }
+        }
 
+
+ }
