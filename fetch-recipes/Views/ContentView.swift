@@ -30,30 +30,16 @@ struct ContentView: View {
                 }
                 .onAppear {
                     UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
-                }
-                .onChange(of: selectedTab) { newTab in
-                    // Handle tab selection here
-                    if newTab == 0 {
-                        print("Explore tab clicked")
-                    }
-                    if newTab == 1 {
-                        print("Surprise me! tab clicked")
-                        Task {
-                            await viewModel.getAllRecipes()
-                            switch viewModel.status {
-                            case .success(let data):
-                                desserts = data // Update the desserts array
-                            case .fetching:
-                                // Handle fetching state
-                                // ProgressView should be used in the view hierarchy
-                                // For now, print a message
-                                print("Fetching...")
-                            default:
-                                // Handle other states
-                                // EmptyView should be used in the view hierarchy
-                                // For now, print a message
-                                print("Other states...")
-                            }
+                    // Load desserts data immediately
+                    Task {
+                        await viewModel.getAllRecipes()
+                        switch viewModel.status {
+                        case .success(let data):
+                            desserts = data
+                        case .fetching:
+                            print("Fetching...")
+                        default:
+                            print("Other states...")
                         }
                     }
                 }
