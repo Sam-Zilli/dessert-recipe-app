@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2221C5DA2B44D8F7006D69B2 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5D92B44D8F7006D69B2 /* Recipe.swift */; };
+		2221C5DC2B44DA31006D69B2 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5DB2B44DA31006D69B2 /* FetchController.swift */; };
+		2221C5DE2B44DD63006D69B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5DD2B44DD63006D69B2 /* Constants.swift */; };
+		2221C5E02B44DFB9006D69B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5DF2B44DFB9006D69B2 /* ViewModel.swift */; };
+		2221C5E22B44E43C006D69B2 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5E12B44E43C006D69B2 /* RecipeView.swift */; };
+		2221C5E42B44FDD3006D69B2 /* ListRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5E32B44FDD3006D69B2 /* ListRecipesView.swift */; };
 		22C9C69C2B44C38D00AB7801 /* fetch_recipesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9C69B2B44C38D00AB7801 /* fetch_recipesApp.swift */; };
 		22C9C69E2B44C38D00AB7801 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9C69D2B44C38D00AB7801 /* ContentView.swift */; };
 		22C9C6A02B44C38F00AB7801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C9C69F2B44C38F00AB7801 /* Assets.xcassets */; };
@@ -34,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2221C5D92B44D8F7006D69B2 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		2221C5DB2B44DA31006D69B2 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
+		2221C5DD2B44DD63006D69B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2221C5DF2B44DFB9006D69B2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2221C5E12B44E43C006D69B2 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		2221C5E32B44FDD3006D69B2 /* ListRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipesView.swift; sourceTree = "<group>"; };
 		22C9C6982B44C38D00AB7801 /* fetch-recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fetch-recipes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C9C69B2B44C38D00AB7801 /* fetch_recipesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetch_recipesApp.swift; sourceTree = "<group>"; };
 		22C9C69D2B44C38D00AB7801 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +108,12 @@
 			children = (
 				22C9C69B2B44C38D00AB7801 /* fetch_recipesApp.swift */,
 				22C9C69D2B44C38D00AB7801 /* ContentView.swift */,
+				2221C5DB2B44DA31006D69B2 /* FetchController.swift */,
+				2221C5E32B44FDD3006D69B2 /* ListRecipesView.swift */,
+				2221C5DF2B44DFB9006D69B2 /* ViewModel.swift */,
+				2221C5E12B44E43C006D69B2 /* RecipeView.swift */,
+				2221C5DD2B44DD63006D69B2 /* Constants.swift */,
+				2221C5D92B44D8F7006D69B2 /* Recipe.swift */,
 				22C9C69F2B44C38F00AB7801 /* Assets.xcassets */,
 				22C9C6A12B44C38F00AB7801 /* Preview Content */,
 			);
@@ -257,7 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2221C5DE2B44DD63006D69B2 /* Constants.swift in Sources */,
+				2221C5DA2B44D8F7006D69B2 /* Recipe.swift in Sources */,
+				2221C5E42B44FDD3006D69B2 /* ListRecipesView.swift in Sources */,
 				22C9C69E2B44C38D00AB7801 /* ContentView.swift in Sources */,
+				2221C5E22B44E43C006D69B2 /* RecipeView.swift in Sources */,
+				2221C5DC2B44DA31006D69B2 /* FetchController.swift in Sources */,
+				2221C5E02B44DFB9006D69B2 /* ViewModel.swift in Sources */,
 				22C9C69C2B44C38D00AB7801 /* fetch_recipesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +454,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +487,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
