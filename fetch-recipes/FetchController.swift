@@ -10,51 +10,43 @@ import Foundation
 
 struct FetchController {
     enum NetworkError: Error {
-        case badURL, badResponse
+        case badURL, badResponse, decodingError
     }
+    
     private let baseURL = URL(string: "https://themealdb.com/api/json/v1/1/")!
     
     // https://themealdb.com/api/json/v1/1/lookup.php?i=MEAL_ID
-    func fetchRecipe(from idMeal: String) async throws -> Recipe {
+    func fetchRecipe(from idMeal: String) async throws -> Meal {
         let recipeURL = baseURL.appendingPathComponent("lookup.php")
         var recipeComponents = URLComponents(url: recipeURL, resolvingAgainstBaseURL: true)
-        //        let recipeQueryItem = URLQueryItem(name: "i", value : idMeal)
         let recipeQueryItem = URLQueryItem(name: "i", value: idMeal.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))
         recipeComponents?.queryItems = [recipeQueryItem]
         
-        print("Recipe URL: ", recipeURL)
-        print("Recipe Components: ", recipeComponents)
-        print("QueryItem: ", recipeQueryItem)
-        
         guard let fetchURL = recipeComponents?.url else {
-            print("ERORR IN FETCHCONTROLLER 1")
             throw NetworkError.badURL
         }
         
-        print("Fetch URL: ", fetchURL)
-        
-        let (data, response) = try await URLSession.shared.data(from: fetchURL)
-        
-        print("Made it here")
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200
-        else {
-            print("ERORR IN FETCHCONTROLLER 2")
-            throw NetworkError.badResponse
-        }
-        
-        
-        
-        
         do {
-            print(response)
-            //            let decoder = JSONDecoder()
-            //            let recipe = try decoder.decode(Recipe.self, from: data)
-            let recipe = try JSONDecoder().decode(Recipe.self, from: data)
-            print("Recipe: ", recipe)
-            return recipe
+            let (data, response) = try await URLSession.shared.data(from: fetchURL)
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                throw NetworkError.badResponse
+            }
+            
+            let recipeWrapper = try JSONDecoder().decode(RecipeWrapper.self, from: data)
+            let meals = recipeWrapper.meals
+            
+            guard let firstMeal = meals.first else {
+                throw NetworkError.decodingError
+            }
+            print(firstMeal.idMeal)
+            print(firstMeal.strCategory)
+            print(firstMeal.strInstructions)
+            return firstMeal
         } catch {
-            print("Error decoding Recipe: \(error)")
+            print("Error in fetchRecipe: \(error)")
             throw error
         }
     }
 }
+

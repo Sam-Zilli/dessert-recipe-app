@@ -21,7 +21,7 @@ struct RecipeView: View {
                             Image("MEALEX")
                                 .resizable()
                                 .scaledToFill()
-                            Text("Meal Name")
+                            Text(data.strMeal)
                                 .foregroundColor(.white)
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                 .padding(20)

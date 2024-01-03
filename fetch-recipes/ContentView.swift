@@ -18,11 +18,14 @@ struct ContentView: View {
 //
 //        }
         TabView {
-            ListRecipesView() 
+            // A list of all the recipes, in alphabetical order
+            ListRecipesView()
                 .tabItem {
                     Label("Explore", systemImage: "globe")
                 }
+            // Chooses a random recipe
             Text("Random Recipe")
+                // RecipeView is used for both Random Recipe feature and if a user chooses a recipe from the ListRecipesView
                 RecipeView()
                 .tabItem {
                     Label("Suprise me!", systemImage: "globe")

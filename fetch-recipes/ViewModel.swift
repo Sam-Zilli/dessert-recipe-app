@@ -12,7 +12,7 @@ class ViewModel: ObservableObject {
     enum Status {
         case notStarted
         case fetching
-        case success(data: Recipe)
+        case success(data: Meal)
         case failed(error: Error)
     }
     
