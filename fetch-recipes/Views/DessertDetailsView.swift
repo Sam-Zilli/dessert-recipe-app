@@ -16,7 +16,7 @@ struct DessertDetailsView: View {
                 ScrollView {
                     switch viewModel.status {
                     case .recipeSuccess(let recipe):
-                        let nonNilIngredients = recipe.nonNilIngredients
+                        let nonNilIngredients = recipe.nonNilIngredientsWithMeasurements
                         ZStack(alignment: .bottom) {
                             TabletopBackground()
                             AsyncImage(url: recipe.strMealThumb) { phase in
@@ -49,8 +49,8 @@ struct DessertDetailsView: View {
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
-                            ForEach(nonNilIngredients, id: \.self) { ingredient in
-                                Text(ingredient)
+                            ForEach(nonNilIngredients, id: \.0) { ingredient, measurement in
+                                Text("\(measurement) \(ingredient)")
                                     .padding(.bottom, 2)
                             }
                             

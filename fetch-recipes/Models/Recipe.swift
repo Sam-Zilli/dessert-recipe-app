@@ -37,84 +37,128 @@ struct Recipe: Codable, Identifiable {
     let strIngredient19: String?
     let strIngredient20: String?
     
+    let strMeasure1: String
+    let strMeasure2: String?
+    let strMeasure3: String?
+    let strMeasure4: String?
+    let strMeasure5: String?
+    let strMeasure6: String?
+    let strMeasure7: String?
+    let strMeasure8: String?
+    let strMeasure9: String?
+    let strMeasure10: String?
+    let strMeasure11: String?
+    let strMeasure12: String?
+    let strMeasure13: String?
+    let strMeasure14: String?
+    let strMeasure15: String?
+    let strMeasure16: String?
+    let strMeasure17: String?
+    let strMeasure18: String?
+    let strMeasure19: String?
+    let strMeasure20: String?
+    
     var id: String { idMeal }
 
 }
 
 
 extension Recipe {
-    // gets all null, empty strings and repeat ingredients out and returns list of GOOD ingredients
-    var nonNilIngredients: [String] {
-        let ingredients = [
-            strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5,
-            strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10,
-            strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15,
-            strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20
+    // Gets non-null ingredients and their corresponding measurements
+    var nonNilIngredientsWithMeasurements: [(ingredient: String, measurement: String)] {
+        let ingredients: [(String?, String?)] = [
+            (strIngredient1, strMeasure1),
+            (strIngredient2, strMeasure2),
+            (strIngredient3, strMeasure3),
+            (strIngredient4, strMeasure4),
+            (strIngredient5, strMeasure5),
+            (strIngredient6, strMeasure6),
+            (strIngredient7, strMeasure7),
+            (strIngredient8, strMeasure8),
+            (strIngredient9, strMeasure9),
+            (strIngredient10, strMeasure10),
+            (strIngredient11, strMeasure11),
+            (strIngredient12, strMeasure12),
+            (strIngredient13, strMeasure13),
+            (strIngredient14, strMeasure14),
+            (strIngredient15, strMeasure15),
+            (strIngredient16, strMeasure16),
+            (strIngredient17, strMeasure17),
+            (strIngredient18, strMeasure18),
+            (strIngredient19, strMeasure19),
+            (strIngredient20, strMeasure20)
         ]
 
-        let uniqueIngredients = Array(Set(ingredients.compactMap { $0 }))
-        let filteredIngredients = uniqueIngredients.filter { !$0.isEmpty }
-        
-        return filteredIngredients
+        let nonNilIngredientsWithMeasurements: [(ingredient: String, measurement: String)] = ingredients
+            .compactMap { (ingredient, measurement) -> (ingredient: String, measurement: String)? in
+                guard let ingredient = ingredient, !ingredient.isEmpty else {
+                    return nil
+                }
+                return (ingredient, measurement ?? "")
+            }
+
+        return nonNilIngredientsWithMeasurements
     }
 }
 
 
 
-extension Recipe {
-    static let sampleData: [Recipe] =
-    [
-        Recipe(idMeal: "53049",
-             strMeal: "Apple & Blackberry Crumble",
-             strCategory: "Dessert",
-             strInstructions: "Mix milk, oil and egg together. Sift flour, baking powder and salt into the mixture. Stir well until all ingredients are combined evenly.\r\n\r\nSpread some batter onto the pan. Spread a thin layer of batter to the side of the pan. Cover the pan for 30-60 seconds until small air bubbles appear.\r\n\r\nAdd butter, cream corn, crushed peanuts and sugar onto the pancake. Fold the pancake into half once the bottom surface is browned.\r\n\r\nCut into wedges and best eaten when it is warm.",
-             strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!,
-             strIngredient1: "Milk",
-             strIngredient2: "Oil",
-             strIngredient3: "Eggs",
-             strIngredient4: "Flour",
-             strIngredient5: "Baking Powder",
-             strIngredient6: "Salt",
-             strIngredient7: "Unsalted Butter",
-             strIngredient8: "Sugar",
-             strIngredient9: "Peanut Butter",
-             strIngredient10: "",
-             strIngredient11: "",
-             strIngredient12: "",
-             strIngredient13: "",
-             strIngredient14: "",
-             strIngredient15: "",
-             strIngredient16: "",
-             strIngredient17: "",
-             strIngredient18: "",
-             strIngredient19: "",
-             strIngredient20: ""
-        ),
-        Recipe(idMeal: "52893",
-             strMeal: "Apple & Blackberry Crumble",
-             strCategory: "Dessert",
-             strInstructions: "Instructions for Apple & Blackberry Crumble",
-             strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!,
-             strIngredient1: "Ingredient1",
-             strIngredient2: "Ingredient2",
-             strIngredient3: "Ingredient3",
-             strIngredient4: "Ingredient4",
-             strIngredient5: "Ingredient5",
-             strIngredient6: "Ingredient6",
-             strIngredient7: "Ingredient7",
-             strIngredient8: "Ingredient8",
-             strIngredient9: "Ingredient9",
-             strIngredient10: "Ingredient10",
-             strIngredient11: "Ingredient11",
-             strIngredient12: "Ingredient12",
-             strIngredient13: "Ingredient13",
-             strIngredient14: "Ingredient14",
-             strIngredient15: "Ingredient15",
-             strIngredient16: "Ingredient16",
-             strIngredient17: "Ingredient17",
-             strIngredient18: "Ingredient18",
-             strIngredient19: "Ingredient19",
-             strIngredient20: "Ingredient20"
-        ),
-    ]
-}
+
+
+//extension Recipe {
+//    static let sampleData: [Recipe] =
+//    [
+//        Recipe(idMeal: "53049",
+//             strMeal: "Apple & Blackberry Crumble",
+//             strCategory: "Dessert",
+//             strInstructions: "Mix milk, oil and egg together. Sift flour, baking powder and salt into the mixture. Stir well until all ingredients are combined evenly.\r\n\r\nSpread some batter onto the pan. Spread a thin layer of batter to the side of the pan. Cover the pan for 30-60 seconds until small air bubbles appear.\r\n\r\nAdd butter, cream corn, crushed peanuts and sugar onto the pancake. Fold the pancake into half once the bottom surface is browned.\r\n\r\nCut into wedges and best eaten when it is warm.",
+//             strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!,
+//             strIngredient1: "Milk",
+//             strIngredient2: "Oil",
+//             strIngredient3: "Eggs",
+//             strIngredient4: "Flour",
+//             strIngredient5: "Baking Powder",
+//             strIngredient6: "Salt",
+//             strIngredient7: "Unsalted Butter",
+//             strIngredient8: "Sugar",
+//             strIngredient9: "Peanut Butter",
+//             strIngredient10: "",
+//             strIngredient11: "",
+//             strIngredient12: "",
+//             strIngredient13: "",
+//             strIngredient14: "",
+//             strIngredient15: "",
+//             strIngredient16: "",
+//             strIngredient17: "",
+//             strIngredient18: "",
+//             strIngredient19: "",
+//             strIngredient20: ""
+//        ),
+//        Recipe(idMeal: "52893",
+//             strMeal: "Apple & Blackberry Crumble",
+//             strCategory: "Dessert",
+//             strInstructions: "Instructions for Apple & Blackberry Crumble",
+//             strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!,
+//             strIngredient1: "Ingredient1",
+//             strIngredient2: "Ingredient2",
+//             strIngredient3: "Ingredient3",
+//             strIngredient4: "Ingredient4",
+//             strIngredient5: "Ingredient5",
+//             strIngredient6: "Ingredient6",
+//             strIngredient7: "Ingredient7",
+//             strIngredient8: "Ingredient8",
+//             strIngredient9: "Ingredient9",
+//             strIngredient10: "Ingredient10",
+//             strIngredient11: "Ingredient11",
+//             strIngredient12: "Ingredient12",
+//             strIngredient13: "Ingredient13",
+//             strIngredient14: "Ingredient14",
+//             strIngredient15: "Ingredient15",
+//             strIngredient16: "Ingredient16",
+//             strIngredient17: "Ingredient17",
+//             strIngredient18: "Ingredient18",
+//             strIngredient19: "Ingredient19",
+//             strIngredient20: "Ingredient20"
+//        ),
+//    ]
+//}
