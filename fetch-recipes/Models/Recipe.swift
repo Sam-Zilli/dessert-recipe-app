@@ -40,7 +40,27 @@ struct Recipe: Codable, Identifiable {
     var id: String { idMeal }
 
 }
-//
+
+
+extension Recipe {
+    // gets all null, empty strings and repeat ingredients out and returns list of GOOD ingredients
+    var nonNilIngredients: [String] {
+        let ingredients = [
+            strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5,
+            strIngredient6, strIngredient7, strIngredient8, strIngredient9, strIngredient10,
+            strIngredient11, strIngredient12, strIngredient13, strIngredient14, strIngredient15,
+            strIngredient16, strIngredient17, strIngredient18, strIngredient19, strIngredient20
+        ]
+
+        let uniqueIngredients = Array(Set(ingredients.compactMap { $0 }))
+        let filteredIngredients = uniqueIngredients.filter { !$0.isEmpty }
+        
+        return filteredIngredients
+    }
+}
+
+
+
 extension Recipe {
     static let sampleData: [Recipe] =
     [

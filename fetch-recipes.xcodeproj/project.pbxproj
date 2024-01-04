@@ -12,14 +12,11 @@
 		2221C5DE2B44DD63006D69B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5DD2B44DD63006D69B2 /* Constants.swift */; };
 		2221C5E02B44DFB9006D69B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5DF2B44DFB9006D69B2 /* ViewModel.swift */; };
 		2221C5E22B44E43C006D69B2 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5E12B44E43C006D69B2 /* RecipeView.swift */; };
-		2221C5E42B44FDD3006D69B2 /* ListRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221C5E32B44FDD3006D69B2 /* ListRecipesView.swift */; };
 		222224772B45D8290003C995 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222224762B45D8290003C995 /* CardView.swift */; };
 		222224792B45D8DE0003C995 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222224782B45D8DE0003C995 /* TrailingIconLabelStyle.swift */; };
-		222224872B45E9C30003C995 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222224862B45E9C30003C995 /* MeetingView.swift */; };
 		222224902B45EFB50003C995 /* DessertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222248F2B45EFB50003C995 /* DessertsView.swift */; };
 		222224922B460DA50003C995 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222224912B460DA50003C995 /* Meal.swift */; };
 		222224962B46113E0003C995 /* DessertDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222224952B46113E0003C995 /* DessertDetailsView.swift */; };
-		222224982B46195A0003C995 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222224972B4619590003C995 /* DetailView.swift */; };
 		22C9C69C2B44C38D00AB7801 /* fetch_recipesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9C69B2B44C38D00AB7801 /* fetch_recipesApp.swift */; };
 		22C9C69E2B44C38D00AB7801 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9C69D2B44C38D00AB7801 /* ContentView.swift */; };
 		22C9C6A02B44C38F00AB7801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22C9C69F2B44C38F00AB7801 /* Assets.xcassets */; };
@@ -52,14 +49,11 @@
 		2221C5DD2B44DD63006D69B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2221C5DF2B44DFB9006D69B2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2221C5E12B44E43C006D69B2 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
-		2221C5E32B44FDD3006D69B2 /* ListRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipesView.swift; sourceTree = "<group>"; };
 		222224762B45D8290003C995 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		222224782B45D8DE0003C995 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
-		222224862B45E9C30003C995 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		2222248F2B45EFB50003C995 /* DessertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertsView.swift; sourceTree = "<group>"; };
 		222224912B460DA50003C995 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		222224952B46113E0003C995 /* DessertDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailsView.swift; sourceTree = "<group>"; };
-		222224972B4619590003C995 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailView.swift; path = ../../../../../.Trash/DetailView.swift; sourceTree = "<group>"; };
 		22C9C6982B44C38D00AB7801 /* fetch-recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fetch-recipes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C9C69B2B44C38D00AB7801 /* fetch_recipesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetch_recipesApp.swift; sourceTree = "<group>"; };
 		22C9C69D2B44C38D00AB7801 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,8 +108,6 @@
 				222224762B45D8290003C995 /* CardView.swift */,
 				222224782B45D8DE0003C995 /* TrailingIconLabelStyle.swift */,
 				222224952B46113E0003C995 /* DessertDetailsView.swift */,
-				222224972B4619590003C995 /* DetailView.swift */,
-				222224862B45E9C30003C995 /* MeetingView.swift */,
 				2222248F2B45EFB50003C995 /* DessertsView.swift */,
 			);
 			path = Views;
@@ -148,7 +140,6 @@
 				222224852B45E8F00003C995 /* Views */,
 				222224812B45E69A0003C995 /* Models */,
 				22C9C69B2B44C38D00AB7801 /* fetch_recipesApp.swift */,
-				2221C5E32B44FDD3006D69B2 /* ListRecipesView.swift */,
 				2221C5DB2B44DA31006D69B2 /* FetchController.swift */,
 				2221C5DF2B44DFB9006D69B2 /* ViewModel.swift */,
 				2221C5DD2B44DD63006D69B2 /* Constants.swift */,
@@ -313,13 +304,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2221C5DE2B44DD63006D69B2 /* Constants.swift in Sources */,
-				222224982B46195A0003C995 /* DetailView.swift in Sources */,
-				222224872B45E9C30003C995 /* MeetingView.swift in Sources */,
 				222224922B460DA50003C995 /* Meal.swift in Sources */,
 				222224902B45EFB50003C995 /* DessertsView.swift in Sources */,
 				2221C5DA2B44D8F7006D69B2 /* Recipe.swift in Sources */,
 				222224962B46113E0003C995 /* DessertDetailsView.swift in Sources */,
-				2221C5E42B44FDD3006D69B2 /* ListRecipesView.swift in Sources */,
 				22C9C69E2B44C38D00AB7801 /* ContentView.swift in Sources */,
 				2221C5E22B44E43C006D69B2 /* RecipeView.swift in Sources */,
 				222224792B45D8DE0003C995 /* TrailingIconLabelStyle.swift in Sources */,

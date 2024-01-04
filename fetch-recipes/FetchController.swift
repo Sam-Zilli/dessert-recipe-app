@@ -31,12 +31,9 @@ struct FetchController {
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 throw NetworkError.badResponse
             }
-            print("HERERER")
             
             let recipeWrapper = try JSONDecoder().decode(RecipeWrapper.self, from: data)
-            print("HEY")
             let recipes = recipeWrapper.meals
-            print(recipes)
             
             guard let recipe = recipes.first else {
                 throw NetworkError.decodingError
@@ -66,13 +63,35 @@ struct FetchController {
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 throw NetworkError.badResponse
             }
+            
             let mealWrapper = try JSONDecoder().decode(MealWrapper.self, from: data)
             let meals = mealWrapper.meals
-            return meals
+            // sorting in alphabetical order as per the reqs
+            let sortedMeals = sortMealsAlphabetically(meals: meals)
+            
+            return sortedMeals
         } catch {
             print("Error in fetchDessertRecipes: \(error)")
             throw error
         }
     }
-}
 
+    func sortMealsAlphabetically(meals: [Meal]) -> [Meal] {
+        let sortedMeals = meals.sorted { $0.strMeal.localizedCaseInsensitiveCompare($1.strMeal) == .orderedAscending }
+        return sortedMeals
+    }
+    
+    func getUniqueMealIDs() async throws -> [String] {
+        let meals = try await fetchDessertRecipes()
+
+        let uniqueMealIDs = Set(meals.map { $0.idMeal })
+
+        // Convert the set back to an array
+        let uniqueMealIDsArray = Array(uniqueMealIDs)
+        print("Unique Meal IDS array", uniqueMealIDsArray)
+        return uniqueMealIDsArray
+    }
+    
+    
+    
+}

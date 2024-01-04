@@ -8,11 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-extension String {
-
-}
-
 struct TabletopBackground: View {
     var body: some View {
         Image("tabletop")

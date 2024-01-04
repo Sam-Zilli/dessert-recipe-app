@@ -1,10 +1,13 @@
+////
+////  RecipeView.swift
+////  fetch-recipes
+////
+////  Created by Sam on 1/2/24.
+////
+///
+///
+/// previous iteration - keeping for reuse later
 //
-//  RecipeView.swift
-//  fetch-recipes
-//
-//  Created by Sam on 1/2/24.
-//
-
 //import SwiftUI
 //
 //struct RecipeView: View {
@@ -20,7 +23,7 @@
 //                            
 //                            // The image with the banner below it
 //                            ZStack(alignment: .bottom) {
-//                                AsyncImage(url: data.strMealThumb) { phase in
+//                                AsyncImage(url: data[0].strMealThumb) { phase in
 //                                    switch phase {
 //                                    case .empty:
 //                                        ProgressView()
@@ -39,15 +42,15 @@
 //                                        EmptyView()
 //                                    }
 //                                }
-//                                Text(data.strMeal)
+//                                Text(data[0].strMeal)
 //                                    .foregroundColor(.white)
 //                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
 //                                    .padding(20)
 //                                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-//                                    .background(.ultraThinMaterial)
-//                            }
-//                            
-//                            // The recipe text
+////                                    .background(.ultraThinMaterial)
+////                            }
+////                            
+////                            // The recipe text
 //                            Text("Instructions: \n\n" + "\"\(data.strInstructions)\"")
 //                                .multilineTextAlignment(.center)
 //                                .foregroundColor(.white)
@@ -57,8 +60,8 @@
 //                                .frame(width: geo.size.width/1.1,
 //                                       height: geo.size.height)
 //                                .cornerRadius(50)
-//                            
-//                        case .fetching:
+////                            
+////                        case .fetching:
 //                            ProgressView()
 //                            
 //                        default:

@@ -31,20 +31,25 @@ struct Meal: Codable, Identifiable {
     }
 }
 
-extension Meal {
-    static let sampleData: [Meal] =
-    [
-        Meal(idMeal : "53049",
-                strMeal : "Food 1",
-                strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!),
-        
-        Meal(idMeal: "52768",
-                strMeal : "Food 2",
-                strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!),
-        
-        Meal(idMeal: "12345",
-                strMeal : "Food 3",
-                strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!)
-
-    ]
+func sortMealsAlphabetically(meals: [Meal]) -> [Meal] {
+    let sortedMeals = meals.sorted { $0.strMeal.localizedCaseInsensitiveCompare($1.strMeal) == .orderedAscending }
+    return sortedMeals
 }
+
+//extension Meal {
+//    static let sampleData: [Meal] =
+//    [
+//        Meal(idMeal : "53049",
+//                strMeal : "Food 1",
+//                strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!),
+//        
+//        Meal(idMeal: "52768",
+//                strMeal : "Food 2",
+//                strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!),
+//        
+//        Meal(idMeal: "12345",
+//                strMeal : "Food 3",
+//                strMealThumb: URL(string: "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg")!)
+//
+//    ]
+//}
