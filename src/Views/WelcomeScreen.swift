@@ -11,12 +11,7 @@ struct WelcomeScreen: View {
     var body: some View {
         ZStack {
             TabletopBackground();
-            Text("alksdjlakjdlkasjd")
-            Image("welcome_logo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 200)
-                .padding()
+            Text("Test Text")
         }
     }
 }

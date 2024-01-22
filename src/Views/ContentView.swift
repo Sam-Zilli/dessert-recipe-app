@@ -1,3 +1,41 @@
+import SwiftUI
+
+struct ContentView: View {
+    @StateObject private var viewModel = ViewModel(dataFetcher: APIDataFetcher())
+    @State private var desserts: [Meal] = []
+
+    var body: some View {
+        NavigationView {
+            VStack {
+                DessertsListView(meals: desserts)
+                    .onAppear {
+                        UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
+
+                        // Load desserts data asynchronously
+                        Task {
+                            do {
+                                await viewModel.getAllRecipes()
+                                switch viewModel.status {
+                                case .success(let data):
+                                    desserts = data
+                                case .fetching:
+                                    print("Fetching...")
+                                default:
+                                    print("Other states...")
+                                }
+                            }
+                        }
+                    }
+            }
+            .navigationBarTitle("Desserts", displayMode: .inline)
+        }
+        .ignoresSafeArea()
+    }
+}
+
+
+
+
 ////
 ////  ContentView.swift
 ////  fetch-recipes
@@ -45,40 +83,3 @@
 //}
 //
 
-
-
-
-import SwiftUI
-
-struct ContentView: View {
-    @StateObject private var viewModel = ViewModel(dataFetcher: APIDataFetcher())
-    @State private var desserts: [Meal] = []
-
-    var body: some View {
-        NavigationView {
-            VStack {
-                DessertsListView(meals: desserts)
-                    .onAppear {
-                        UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
-
-                        // Load desserts data asynchronously
-                        Task {
-                            do {
-                                await viewModel.getAllRecipes()
-                                switch viewModel.status {
-                                case .success(let data):
-                                    desserts = data
-                                case .fetching:
-                                    print("Fetching...")
-                                default:
-                                    print("Other states...")
-                                }
-                            }
-                        }
-                    }
-            }
-            .navigationBarTitle("Desserts", displayMode: .inline)
-        }
-        .ignoresSafeArea()
-    }
-}
