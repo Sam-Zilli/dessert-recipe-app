@@ -1,10 +1,9 @@
 # fetch-recipe-app
 
-
-
-
+https://github.com/Sam-Zilli/fetch-recipe-app/assets/95256888/a385ae9e-3af5-428f-87dc-cda2ae74082f
 
 Second Iteration (Jan 24, 2024)
+
 Changes:
   -Fixed several bugs including error thrown due to repeat keys
   -Refactored code to MVVM
@@ -12,19 +11,8 @@ Changes:
   -Fixed bug that caused instructions text to cut off due to geo frame limit
   -Removed secondary (redundant) Meal title text
   -Added comments
-https://github.com/Sam-Zilli/fetch-recipe-app/assets/95256888/cc78c3f4-468e-4db2-8f56-4815a954e1d2
+  -Landscape mode
 
+  
 
-
-
-
-
-
-
-
-
-
-
-First prototype 
-https://github.com/Sam-Zilli/fetch-recipe-app/assets/95256888/aa65ffeb-0acc-4abe-b6e1-3be7eb528c29
 
